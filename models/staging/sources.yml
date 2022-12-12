@@ -1,0 +1,61 @@
+version: 2
+
+sources:
+  - name: property_management
+    database: raw
+    schema: property_management
+    tables:
+      - name: properties
+        identifier: properties
+        loaded_at_field: _etl_loaded_at
+        freshness:
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 48
+            period: hour
+        columns:
+          - name: id
+            tests:
+              - not_null
+              - unique
+      - name: leases
+        description: the rental agreement information for each unit. 
+        identifier: leases
+        loaded_at_field: _etl_loaded_at
+        freshness:
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 48
+            period: hour
+      - name: units
+        description: The address of the unit, which property the unit is in, and whether or not the unit has tenants.
+        identifier: units
+        loaded_at_field: _etl_loaded_at
+        freshness:
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 48
+            period: hour
+      - name: rental_applications
+        identifier: rental_applications
+        loaded_at_field: _etl_loaded_at
+        freshness:
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 48
+            period: hour
+        columns:
+          - name: id
+            tests:
+              - not_null
+              - unique
+
+

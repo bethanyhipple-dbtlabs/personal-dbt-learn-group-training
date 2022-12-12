@@ -1,0 +1,66 @@
+version: 2
+
+models:
+  - name: stg_leases
+    descripton: The lease information for a unit and the application this lease is coming from.
+    columns:
+      - name: lease_id
+        tests:
+          - not_null
+      - name: unit_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_units')
+              field: unit_id
+      - name: rental_application_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_properties
+    description: The name and address of the properties
+    columns:
+      - name: property_id
+        tests:
+          - unique
+          - not_null
+
+
+  - name: stg_rental_applications
+    description: All submitted applications for each unit.
+    columns:
+      - name: application_id
+        tests:
+          - unique
+          - not_null
+      - name: application_status
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - approved
+                - denied
+                - converted_to_tenant
+
+  - name: stg_units
+    description: Which property the unit is located in and whether the unit is being rented or not. 
+    columns:
+      - name: unit_id
+        tests:
+          - unique
+          - not_null
+      - name: rent_amount
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: " >= 0"
+      - name: unit_status
+        description: "{{ doc('unit_status') }}"
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - occupied
+                - rented
+                - construction
+                - vacant
