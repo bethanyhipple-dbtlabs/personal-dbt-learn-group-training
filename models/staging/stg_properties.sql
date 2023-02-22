@@ -9,7 +9,7 @@ with properties as(
         zip_code as property_zip_code,
         type as property_type,
         year_built,
-        uploaded_at as property_uploaded_at,
+        uploaded_at as property_uploaded_at
     
     from {{ source('property_management', 'properties') }}
 )
