@@ -33,7 +33,6 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 models:
   property_management:
-      # Applies to all files under models/example/
       marts:
           materialized: table
       staging:
