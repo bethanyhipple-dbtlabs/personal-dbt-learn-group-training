@@ -7,9 +7,9 @@ sources:
     tables:
       - name: properties
         identifier: properties
-        loaded_at_field: _etl_loaded_at
+        loaded_at_field: uploaded_at
         freshness:
-          warn_after:
+          error_after:
             count: 24
             period: hour
         columns:
@@ -20,7 +20,7 @@ sources:
       - name: leases
         description: the rental agreement information for each unit. 
         identifier: leases
-        loaded_at_field: _etl_loaded_at
+        loaded_at_field: uploaded_at
         freshness:
           warn_after:
             count: 24
@@ -28,14 +28,14 @@ sources:
       - name: units
         description: The address of the unit, which property the unit is in, and whether or not the unit has tenants.
         identifier: units
-        loaded_at_field: _etl_loaded_at
+        loaded_at_field: uploaded_at
         freshness:
           warn_after:
             count: 24
             period: hour
       - name: rental_applications
         identifier: rental_applications
-        loaded_at_field: _etl_loaded_at
+        loaded_at_field: uploaded_at
         freshness:
           warn_after:
             count: 24
