@@ -10,7 +10,7 @@ sources:
         loaded_at_field: uploaded_at
         freshness:
           error_after:
-            count: 24
+            count: 1
             period: hour
         columns:
           - name: id
