@@ -1,3 +1,5 @@
+
+
 with properties as(
     select
         id as property_id,

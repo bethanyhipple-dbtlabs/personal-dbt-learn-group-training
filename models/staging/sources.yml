@@ -9,8 +9,8 @@ sources:
         identifier: properties
         loaded_at_field: uploaded_at
         freshness:
-          error_after:
-            count: 1
+          warn_after:
+            count: 24
             period: hour
         columns:
           - name: id
