@@ -1,8 +1,7 @@
 {{
     config(
         materialized='table',
-        schema = 'core',
-        database = 'analytics_core'
+        schema = 'core'
     )
 }}
 
