@@ -1,4 +1,10 @@
-
+{{
+    config(
+        materialized='table',
+        schema = 'core',
+        database = 'analytics_core'
+    )
+}}
 
 with properties as(
     select
