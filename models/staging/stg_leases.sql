@@ -10,6 +10,8 @@ with leases as(
         uploaded_at as lease_uploaded_at
 
 
+
+
     from {{ source('property_management', 'leases') }}
 )
 
