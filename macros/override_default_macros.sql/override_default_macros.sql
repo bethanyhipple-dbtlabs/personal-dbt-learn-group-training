@@ -26,9 +26,7 @@
 
         {%- endif -%}
 
-    {%- endif -%}
-
-    {%- if target.name == 'dev' -%}
+    {% elif target.name == 'dev' %}
         {%- if custom_alias_name is none -%}
  
             {{ target.schema }}_{{ node.name }}
@@ -38,7 +36,11 @@
             {{ custom_alias_name | trim }}
 
         {%- endif -%}
- 
+
+    {% else %}
+
+        {{ node.name }}
+
     {%- endif -%}
- 
+    
 {%- endmacro %}
