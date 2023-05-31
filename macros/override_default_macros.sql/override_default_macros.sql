@@ -26,6 +26,10 @@
 
         {%- endif -%}
 
+    {%- else -%}
+
+        {{ node.name }}
+
     {%- endif -%}
 
     {%- if target.name == 'dev' -%}
@@ -38,6 +42,10 @@
             {{ custom_alias_name | trim }}
 
         {%- endif -%}
+
+    {%- else -%}
+
+        {{ node.name }}
  
     {%- endif -%}
  
