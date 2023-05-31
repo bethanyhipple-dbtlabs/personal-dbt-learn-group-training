@@ -5,6 +5,10 @@
 
         {{ default_schema }}
 
+    {% elif target.name == 'CI'%}
+
+        ci_schema
+
     {%- else -%}
 
         {{ custom_schema_name | trim }}
