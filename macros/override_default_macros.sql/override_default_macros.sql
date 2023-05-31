@@ -22,7 +22,7 @@
     {%- if target.name == 'CI' -%}
         {%- if custom_alias_name is none -%}
 
-            {{ env_var(DBT_CLOUD_PR_ID) }}__{{ node.name }}
+            {{ env_var('DBT_CLOUD_PR_ID') }}__{{ node.name }}
 
          {%- else -%}
  
