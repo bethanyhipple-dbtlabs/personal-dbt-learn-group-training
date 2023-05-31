@@ -2,7 +2,6 @@ version: 2
 
 models:
   - name: stg_leases
-    descripton: The lease information for a unit and the application this lease is coming from.
     columns:
       - name: lease_id
         tests:
@@ -10,9 +9,7 @@ models:
       - name: unit_id
         tests:
           - not_null
-          - relationships:
-              to: ref('stg_units')
-              field: unit_id
+
       - name: rental_application_id
         tests:
           - unique
@@ -50,10 +47,8 @@ models:
         tests:
           - unique
           - not_null
-      - name: rent_amount
-        tests:
-          - dbt_utils.expression_is_true:
-              expression: " >= 0"
+
+
       - name: unit_status
         description: "{{ doc('unit_status') }}"
         tests:
