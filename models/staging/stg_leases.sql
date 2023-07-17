@@ -14,6 +14,9 @@ with leases as(
 
 
 
+
+
+
     from {{ source('property_management', 'leases') }}
 )
 
