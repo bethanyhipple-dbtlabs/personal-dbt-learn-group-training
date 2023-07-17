@@ -1,0 +1,11 @@
+PAYMENT_ID,ORDER_ID,PAYMENT_METHOD,STATUS,AMOUNT,CREATED_AT
+1,1,credit_card,success,10.00,2018-01-01
+2,2,credit_card,success,20.00,2018-01-02
+3,3,coupon,success,1.00,2018-01-04
+4,4,coupon,success,25.00,2018-01-05
+5,5,bank_transfer,success,17.00,2018-01-06
+6,6,credit_card,success,6.00,2018-01-07
+7,7,credit_card,success,16.00,2018-01-09
+8,8,credit_card,success,23.00,2018-01-11
+9,9,gift_card,success,23.00,2018-01-12
+10,10,bank_transfer,success,26.00,2018-01-14
