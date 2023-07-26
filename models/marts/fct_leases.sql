@@ -8,6 +8,8 @@ applications as(
     select * from {{ ref('stg_rental_applications') }}
 ),
 
+
+
 units as(
 
     select * from {{ ref('stg_units') }}
