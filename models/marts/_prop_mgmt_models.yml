@@ -12,3 +12,6 @@ models:
   - name: dim_properties
     group: finance
     access: public
+  - name: fct_leases
+    group: finance
+    access: public
