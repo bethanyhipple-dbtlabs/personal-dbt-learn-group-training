@@ -1,9 +1,4 @@
-{{
-    config(
-        materialized='table',
-        schema = 'stage'
-    )
-}}
+
 
 with properties as(
     select
